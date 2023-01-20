@@ -20,11 +20,14 @@ public class Exercici1 {
                 if (ar[0][i] == 0) {
                     ar[i][0] = 1;
                 }
+                if (ar[0][i] == 0) {
+                    ar[0][i] = 1;
+                }
             }
 
             //Omplir amb sumes
-            for (int i = 1; i < dimensio-1; i++) {
-                for (int j = 1; j < dimensio-1; j++) {
+            for (int i = 1; i < dimensio; i++) {
+                for (int j = 1; j < dimensio; j++) {
                     int dalt = ar[i - 1][j];
                     int esq = ar[i][j - 1];
                     int suma = dalt + esq;
