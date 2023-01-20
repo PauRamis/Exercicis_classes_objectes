@@ -1,4 +1,10 @@
 public class Exercici2 {
+    /*Realitza una classe anomenada «Peix», que tingui una variable membre anomenada «nom». Fes
+        un mètode «setNom(String nom)» i un mètode «getNom()» (que retorna el nom del peix).
+        Implementa un constructor «còpia», que a partir d'un objecte «Peix» generi un nou objecte «Peix».
+        Implementa el mètode «public boolean equals(Peix p)» per poder comparar objectes «Peix» i
+        comprova que funciona correctament. Finalment, a la classe, implementa una variable «count» que
+        compti quants de peixos hem creat.*/
     public static void main(String[] args) {
         Peix peix = new Peix();
         peix.setNom("pep");
@@ -7,6 +13,7 @@ public class Exercici2 {
             System.out.println("Equals");
         else System.out.println("Not equals");
     }
+
     public static class Peix {
         static String name = "UnNamed";
 
