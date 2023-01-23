@@ -22,10 +22,10 @@ public class Exercici2 {
         private String nom = "UnNamed";
 
         Peix(){
+            quantsPeixos++;
         }
 
         Peix(Peix p) {
-            quantsPeixos++;
             this.nom = p.nom;
         }
 
