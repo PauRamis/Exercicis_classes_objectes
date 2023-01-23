@@ -1,13 +1,14 @@
 public class Exercici4 {
     public static void main(String[] args) {
-        Nombre deu = new Nombre("X");
+        Nombre deu = new Nombre("XIX");
         System.out.println(deu.valor);
     }
     public static class Nombre {
         int valor;
 
         Nombre(int n) {
-
+            int resultat = n;
+            this.valor = resultat;
         }
 
         Nombre(String s) {
@@ -22,9 +23,14 @@ public class Exercici4 {
             */
 
             int resultat = 0;
+            int last = 0;
             for (int i = 0; i < s.length(); i++) {
                 char c = s.charAt(i);
-                resultat += valorLletra(c);
+                if (last == 0 || valorLletra(c) <= last)
+                    resultat += valorLletra(c);
+                else
+                    resultat = resultat - 2*last + valorLletra(c);
+                last = valorLletra(c);
             }
             this.valor = resultat;
         }
