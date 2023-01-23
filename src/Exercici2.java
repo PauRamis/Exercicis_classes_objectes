@@ -6,34 +6,39 @@ public class Exercici2 {
         comprova que funciona correctament. Finalment, a la classe, implementa una variable «count» que
         compti quants de peixos hem creat.*/
     public static void main(String[] args) {
-        Peix peix = new Peix();
-        peix.setNom("pep");
-        peix.getNom();
-        if (peix.equals(peix))
-            System.out.println("Equals");
-        else System.out.println("Not equals");
+        Peix p1 = new Peix();
+        p1.setNom("pep");
+
+        Peix p2 = new Peix();
+        p2.setNom(p1.nom);
+        System.out.println(p2.getNom());
+
+        System.out.println(Peix.quantsPeixos);
+        System.out.println(p1.equals(p2));
     }
 
     public static class Peix {
-        static String name = "UnNamed";
+        static int quantsPeixos = 0;
+        private String nom = "UnNamed";
 
-        static void setNom(String nom) {
-            name = nom;
+        Peix(){
         }
 
-        static void getNom() {
-            System.out.println(name);
+        Peix(Peix p) {
+            quantsPeixos++;
+            this.nom = p.nom;
         }
 
-        public Peix copia(Peix peix) {
-            Peix peixCopiat = peix;
-            return peixCopiat;
+        public String getNom() {
+            return nom;
+        }
+
+        void setNom(String nom) {
+            this.nom = nom;
         }
 
         public boolean equals(Peix p) {
-            if (true)
-                return true;
-            return false;
+            return this.nom.equals(p.nom);
         }
     }
 }
