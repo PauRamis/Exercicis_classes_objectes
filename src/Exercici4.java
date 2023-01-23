@@ -47,5 +47,34 @@ public class Exercici4 {
             }
             return 0;
         }
+
+        String hex() {
+            /*
+            1924 a hex
+            1924 % 16 = 120     :4
+            120 % 16 = 7        :8
+            7 8 4
+            */
+
+            String res = "";
+            int n = this.valor;
+            /*do {
+                int q = n / 16;
+                int r = n % 16;
+                n = q;
+                res = lletraHex(r) + res;
+            }*/
+
+            return "0";
+        }
+
+        private String lletraHex(int r) {
+            return null;
+        }
+
+        String bin() {
+
+            return "0";
+        }
     }
 }
