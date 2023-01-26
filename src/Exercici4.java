@@ -1,7 +1,10 @@
 public class Exercici4 {
     public static void main(String[] args) {
-        Nombre deu = new Nombre("XIX");
+        Nombre deu = new Nombre("X");
         System.out.println(deu.valor);
+
+        Nombre set = new Nombre(7);
+        System.out.println(set.bin());
     }
     public static class Nombre {
         int valor;
@@ -53,19 +56,17 @@ public class Exercici4 {
             1924 a hex
             1924 % 16 = 120     :4
             120 % 16 = 7        :8
-            7 8 4
-            */
+            7 8 4 */
 
             String res = "";
             int n = this.valor;
-            /*do {
+            do {
                 int q = n / 16;
                 int r = n % 16;
                 n = q;
                 res = lletraHex(r) + res;
-            }*/
-
-            return "0";
+            } while (n > 0);
+            return res;
         }
 
         private String lletraHex(int r) {
@@ -73,8 +74,17 @@ public class Exercici4 {
         }
 
         String bin() {
-
-            return "0";
+            String res = "";
+            int n = this.valor;
+            while (n > 0) {
+                if ((n & 1) == 1) {
+                    res = "1" + res;
+                } else {
+                    res = "0" + res;
+                }
+                n = n >> 1;
+            }
+            return res;
         }
     }
 }
