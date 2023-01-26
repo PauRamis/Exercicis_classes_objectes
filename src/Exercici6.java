@@ -1,6 +1,13 @@
 public class Exercici6 {
     public static void main(String[] args) {
+        /*
+        6- Escriu una classe anomenada «Carta» per representar una carta (naip). Cada carta té dues
+            característiques principals: coll (oros, copes, espases, bastos) i número (de 1 a 12).
 
+        7- Escriu una classe anomenada «Baralla» que conté un joc complet de cartes (espanyoles).
+
+        8- Fes un petit programa per testejar les classes anteriors. Simplement, creeu un objecte de tipus
+            «Baralla» i mostreu les cartes que conté.*/
 
     Carta[] baralla = new Carta[48];
     Carta.Coll[] colls = Carta.Coll.values();
@@ -13,7 +20,7 @@ public class Exercici6 {
                 c.num = nums[j];
                 baralla[i*12 + i] = c;
             }
-            baralla[0].print();
+            baralla[i].print();
         }
     }
     public static class Carta {
@@ -34,11 +41,21 @@ public class Exercici6 {
             System.out.printf(" |  %2d         | \n", this.num.ordinal() + 1 );
             System.out.printf(" |              |");
             System.out.printf(" |              |");
-            System.out.printf(" |              |");
+            System.out.printf(" |      %2d     | \n", getSymbol(this.coll));
             System.out.printf(" |              |");
             System.out.printf(" |              |");
             System.out.printf(" |         %2d  | \n", this.num.ordinal() + 1 );
             System.out.printf(" ---------------- ");
+        }
+
+        private Object getSymbol(Coll coll) {
+            switch (coll) {
+                case OROS: return "OROS";
+                case COPES: return "COPES";
+                case BASTOS: return "BASTOS";
+                case ESPASES: return "ESPASES";
+            }
+            throw new RuntimeException("Coll no valid");
         }
     }
 }
